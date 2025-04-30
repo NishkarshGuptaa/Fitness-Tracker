@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-4 text-center">Dashboard</h2>
+
+<!-- Fitness Data Entry Form -->
+<form method="POST" class="mb-5 mx-auto" style="max-width: 600px;">
+    <input type="date" name="date" class="form-control" required><br>
+    <input type="number" name="steps" class="form-control" placeholder="Steps" required><br>
+    <input type="number" name="calories" class="form-control" placeholder="Calories Burned" required><br>
+    <input type="number" name="workout" class="form-control" placeholder="Workout Minutes" required><br>
+    <button type="submit" class="btn btn-primary mt-2">Add Entry</button>
+</form>
+
+<!-- Progress Bar -->
+<h5 class="mb-2">Daily Step Goal Progress</h5>
+<div class="progress mb-4" style="height: 25px;">
+    <div class="progress-bar" role="progressbar"
+         style="width:  (avg_stepsdefault(0) / 100)round(1) "
+         aria-valuenow="{{ avg_steps|default(0)|int }}"
+         aria-valuemin="0" aria-valuemax="10000">
+        {{ avg_steps|default(0)|int }} steps
+    </div>
+</div>
+
+
+<!-- Fitness Level -->
+<h5>🏁 Fitness Level</h5>
+{% if level == 'Good' %}
+    <span class="badge badge-success">{{ level }}</span>
+{% elif level == 'Average' %}
+    <span class="badge badge-warning">{{ level }}</span>
+{% else %}
+    <span class="badge badge-danger">{{ level }}</span>
+{% endif %}
+<p class="mt-2">{{ suggestion }}</p>
+
+<!-- Fitness Logs Grid -->
+<div class="row mt-4">
+    {% for entry in data %}
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ entry[0] }}</h5>
+                <p class="card-text">🚶 Steps: <strong>{{ entry[1] }}</strong></p>
+                <p class="card-text">🔥 Calories: <strong>{{ entry[2] }}</strong></p>
+                <p class="card-text">⏱️ Workout: <strong>{{ entry[3] }} mins</strong></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

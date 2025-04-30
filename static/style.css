@@ -1,0 +1,181 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    min-height: 100vh;
+    padding: 20px;
+    animation: fadeInBody 1s ease;
+}
+
+/* NAVBAR */
+nav {
+    margin-bottom: 20px;
+    background: #343a40;
+    padding: 15px 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* CONTAINER */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    margin: auto;
+    animation: slideUp 1s ease;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    border-radius: 16px;
+    color: #343a40;
+    padding: 60px 30px;
+    animation: fadeIn 1s ease;
+}
+
+/* FORMS */
+form {
+    margin-bottom: 20px;
+}
+
+input, button {
+    padding: 12px;
+    margin-top: 12px;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* BUTTONS */
+button {
+    background: #007bff;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 91, 187, 0.3);
+}
+
+/* CARDS */
+.card {
+    transition: all 0.3s ease-in-out;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+/* BADGES */
+.badge {
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.badge-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.badge-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* PROGRESS */
+.progress {
+    height: 25px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background-color: #28a745;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    transition: width 1s ease-in-out;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    input, button {
+        max-width: 100%;
+    }
+}

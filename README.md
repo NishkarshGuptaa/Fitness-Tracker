@@ -27,19 +27,20 @@ This is a lightweight fitness tracking web application built using **Flask** and
 
 ## Getting Started
 
-### 1. Clone the Repository
+
+1. #Clone the Repositery#
 ```bash
 git clone https://github.com/your-username/fitness-tracker.git
 cd fitness-tracker
 
-**Create and Activate Virtual Environment**
+2. #Create and Activate Virtual Environment
 python -m venv venv
 venv\Scripts\activate  # Windows
 
- **Install Dependencies**
+3. #Install Dependencies#
 pip install flask werkzeug
 
- **Run the App**
+4. #Run the App#
 python app.py
 
 **Open in Browser**
